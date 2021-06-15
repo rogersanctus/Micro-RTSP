@@ -5,7 +5,7 @@
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/geeksville/Micro-RTSP.git"
+    "url": "https://github.com/rogersanctus/Micro-RTSP.git"
   },
   "authors":
   [
@@ -16,7 +16,16 @@
       "maintainer": true
     }
   ],
-  "version": "0.1.6",
-  "frameworks": "arduino",
-  "platforms": "*"
+  "version": "0.1.7",
+  "frameworks": ["arduino", "espidf"],
+  "platforms": "*",
+  "build": {
+    "flags": [
+      "-Isrc",
+      "-fno-rtti"
+    ],
+    "includeDir": "./src",
+    "srcDir": "./src",
+    "srcFilter": ["-<*>", "+<src>"]
+  }
 }
